@@ -1,15 +1,17 @@
 package com.mercadolibre.quasar;
 
+import com.mercadolibre.quasar.model.Posicion;
+import com.mercadolibre.quasar.model.Triangulador;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 public class TriangulacionTest {
 
-    Triangulador triangulador;
+    private static Triangulador triangulador;
 
     @BeforeAll
-    public void setUp(){
+    public static void setUp(){
         triangulador = new Triangulador();
     }
 
@@ -20,6 +22,4 @@ public class TriangulacionTest {
       Assertions.assertEquals(posicion.x, -300.5 );
       Assertions.assertEquals(posicion.y, -1419.0025);
     }
-
-
 }

@@ -1,4 +1,4 @@
-package com.mercadolibre.quasar;
+package com.mercadolibre.quasar.model;
 
 public class Posicion {
 
