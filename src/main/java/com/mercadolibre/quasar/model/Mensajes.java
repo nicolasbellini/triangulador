@@ -1,5 +1,7 @@
 package com.mercadolibre.quasar.model;
 
+import java.util.ArrayList;
+
 public class Mensajes {
 
     String[] mensaje1;
@@ -27,4 +29,9 @@ public class Mensajes {
         }
     }
 
+    public Mensajes(ArrayList<Satelite> satelites) {
+        this.mensaje1 = satelites.get(0).message;
+        this.mensaje2 = satelites.get(1).message;
+        this.mensaje3 = satelites.get(2).message;
+    }
 }
