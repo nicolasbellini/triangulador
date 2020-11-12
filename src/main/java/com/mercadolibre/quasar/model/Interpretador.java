@@ -4,14 +4,14 @@ import java.util.ArrayList;
 
 public class Interpretador {
 
-    public ArrayList<String> interpretarMensajes(Mensajes mensajes) {
+    public static ArrayList<String> interpretarMensajes(Mensajes mensajes) {
 
         ArrayList<String> mensajeCompleto = new ArrayList<>();
 
         for (int i = 0; i < mensajes.mensaje1.length; i++) {
             String palabra = mensajes.mensaje1[i];
             if(palabra.equals("")){
-                mensajeCompleto.add(this.interpretarPalabra(getPalabra(mensajes.mensaje2, i), getPalabra(mensajes.mensaje3, i)));
+                mensajeCompleto.add(interpretarPalabra(getPalabra(mensajes.mensaje2, i), getPalabra(mensajes.mensaje3, i)));
             }
             else {
                 mensajeCompleto.add(palabra);
@@ -21,7 +21,7 @@ public class Interpretador {
         return limpiarMensaje(mensajeCompleto);
     }
 
-    private ArrayList<String> limpiarMensaje(ArrayList<String> mensajeCompleto) {
+    private static ArrayList<String> limpiarMensaje(ArrayList<String> mensajeCompleto) {
         int n = mensajeCompleto.size();
         if (n < 2) {
             return mensajeCompleto;
@@ -42,7 +42,7 @@ public class Interpretador {
         return mensajeCompleto;
     }
 
-    private String getPalabra(String[] mensaje, int i) {
+    private static String getPalabra(String[] mensaje, int i) {
         try{
             return mensaje[i];
         } catch(Exception e) {
@@ -50,7 +50,7 @@ public class Interpretador {
         }
     }
 
-    private String interpretarPalabra(String s2, String s3) {
+    private static String interpretarPalabra(String s2, String s3) {
         if (s2.equals("")){
             return s3;
         }

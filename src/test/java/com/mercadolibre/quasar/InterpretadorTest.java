@@ -48,15 +48,15 @@ public class InterpretadorTest {
     }
 
     @Test
-    @DisplayName("Se puede resolver tres mensajes donde el primero es de length mas corto")
+    @DisplayName("Se puede resolver tres mensajes con distintas palabra perdidas")
     public void testInterpreteGeneraMensaje3(){
-        String[] mensaje1 = {"este", "es", "un", "mensaje"};
-        String[] mensaje2 = {"este", "", "un", "mensaje", ""};
-        String[] mensaje3 = {"", "", "es", "", "mensaje"};
+        String[] mensaje1 = {"este", "", "", "mensaje", ""};
+        String[] mensaje2 = {"", "es", "", "", "secreto"};
+        String[] mensaje3 = {"este", "", "un", "", ""};
 
         ArrayList<String> mensajeDescifrado = interpretador.interpretarMensajes(new Mensajes(mensaje1, mensaje2, mensaje3));
 
-        ArrayList<String> mensajeEsperado = new ArrayList<>(Arrays.asList("este", "es", "un", "mensaje"));
+        ArrayList<String> mensajeEsperado = new ArrayList<>(Arrays.asList("este", "es", "un", "mensaje", "secreto"));
 
         Assertions.assertEquals(mensajeEsperado, mensajeDescifrado);
     }
